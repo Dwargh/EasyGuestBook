@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace EZGB.DataAccess
 {
-    class ConnectionProvider : IConnectionProvider
+    class ConnectionProvider : IDbConnectionProvider
     {
         public const string ConnectionStringName = "EZGBDatabase";
         public IDbConnection GetOpenConnection()

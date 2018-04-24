@@ -2,9 +2,9 @@
 {
     internal abstract class RepositoryBase
     {
-        protected IConnectionProvider ConnectionProvider { get; private set; }
+        protected IDbConnectionProvider ConnectionProvider { get; private set; }
 
-        protected RepositoryBase(IConnectionProvider connectionProvider)
+        protected RepositoryBase(IDbConnectionProvider connectionProvider)
         {
             ConnectionProvider = connectionProvider;
         }

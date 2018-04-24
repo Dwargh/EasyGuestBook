@@ -10,9 +10,12 @@ namespace EZGB.Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            return RedirectToAction("Index","Post", new { area ="App" });
+        }
 
-            return View();
+        public ActionResult Error(string message)
+        {
+            return View(message);
         }
     }
 }

@@ -28,10 +28,10 @@ namespace EZGB.Web
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             
             AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
 
         private void RegisterModules(ContainerBuilder builder)
@@ -45,6 +45,7 @@ namespace EZGB.Web
             Exception exception = Server.GetLastError();
             Server.ClearError();
             Response.Redirect("/Home/Error");
+            //send errors to log here, i.e. using log4net.
         }
     }
 }

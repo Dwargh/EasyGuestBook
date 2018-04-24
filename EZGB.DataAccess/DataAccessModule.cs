@@ -10,7 +10,7 @@ namespace EZGB.DataAccess
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces();
 
-           builder.RegisterType<ConnectionProvider>().As<IConnectionProvider>();
+            builder.RegisterType<ConnectionProvider>().As<IDbConnectionProvider>();
         }
     }
 }

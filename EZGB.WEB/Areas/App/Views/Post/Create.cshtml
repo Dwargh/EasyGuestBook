@@ -1,0 +1,38 @@
+﻿@using EZGB.Web.Business.Models
+@model PostModel
+
+@{
+    ViewBag.Title = "Create Post";
+    Layout = "~/Areas/App/Views/Shared/_layout.cshtml";
+}
+
+<div id="post">
+    @using (Html.BeginForm("Save", "Post", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group has-feedback">
+            @Html.LabelFor(p => p.Email, "Email", htmlAttributes: new { @class = "control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(p => p.Email, new { type = "Email", required = true, @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.Heading, "Heading", htmlAttributes: new { @class = "control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(p => p.Heading, new { required = true, @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Heading, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(p => p.Message, "Message", new { @class = "control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(p => p.Message, 5, 0, new { required = true, @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Message, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <input type="submit" value="Send Post" class="btn btn-info" />
+        </div>
+    }
+</div>
