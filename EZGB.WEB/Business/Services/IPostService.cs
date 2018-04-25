@@ -9,7 +9,6 @@ namespace EZGB.Web.Business.Services
 {
     public interface IPostService
     {
-        //PostModel GetPost(Guid id);
         IList<PostModel> GetPosts();
         PostModel SavePost(PostModel model);
     }

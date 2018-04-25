@@ -14,16 +14,6 @@ namespace EZGB.DataAccess.Repositories
         {
         }
 
-        //public Post GetPost(Guid id)
-        //{
-        //    Post result; 
-        //    using (var connection = ConnectionProvider.GetOpenConnection())
-        //    {
-        //        result = connection.Get<Post>(id);
-        //    }
-        //    return result;
-        //}
-
         public IList<Post> GetPosts()
         {
             var result = new List<Post>();

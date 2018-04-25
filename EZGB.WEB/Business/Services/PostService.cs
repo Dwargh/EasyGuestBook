@@ -17,12 +17,6 @@ namespace EZGB.Web.Business.Services
             _postMapper = postMapper;
         }
 
-        //public PostModel GetPost(Guid id)
-        //{
-        //    var post = _postRepository.GetPost(id);
-        //    return _postMapper.Map(post);
-        //}
-
         public IList<PostModel> GetPosts()
         {
             var posts = _postRepository.GetPosts();

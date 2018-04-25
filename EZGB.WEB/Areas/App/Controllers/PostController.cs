@@ -16,7 +16,6 @@ namespace EZGB.Web.Areas.App.Controllers
             _postService = postService;
         }
 
-        // GET: Controllers/Post
         [HttpGet]
         public ViewResult Index()
         {

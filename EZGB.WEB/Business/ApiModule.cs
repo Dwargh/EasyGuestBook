@@ -13,8 +13,6 @@ namespace EZGB.Web.Business
             builder.RegisterAssemblyTypes(ThisAssembly)
                 .Where(t => t.Name.EndsWith("ModelBuilder") || t.Name.EndsWith("Service") || t.Name.EndsWith("Mapper"))
                 .AsImplementedInterfaces();
-
-            builder.RegisterWebApiModelBinders(ThisAssembly);
         }   
     }
 }
